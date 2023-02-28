@@ -1,14 +1,17 @@
+let resetTimer = false
+
+
 export default function Controls({
     countDown,
     countDownOn,
-    resetTimer,
     minutesDisplay,
-    secondsDisplay
-
+    secondsDisplay,
 }){
+
 
     function PlayAndAntiRepeatTimerExecution(){
         if(countDownOn == false){
+
             resetTimer = false
             countDown()
             countDownOn = true
@@ -35,6 +38,12 @@ export default function Controls({
     return{
         PlayAndAntiRepeatTimerExecution,
         soundButtonsOnOff,
-        resetTimerDisplay
+        resetTimerDisplay,
     }
+
+    
+}
+
+export{
+    resetTimer,
 }

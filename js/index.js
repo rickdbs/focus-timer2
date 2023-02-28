@@ -1,22 +1,25 @@
 import Controls from "./controls.js"
+import { resetTimer } from "./controls.js"
 
-const btnPlay = document.querySelector(".play")
-const btnStop = document.querySelector(".stop")
-const btnPlus = document.querySelector(".time-plus")
-const btnLess = document.querySelector(".time-less")
-const btnForest = document.querySelector(".forest")
-const btnRain = document.querySelector(".rain")
-const btnCoffeeShop = document.querySelector(".coffee-shop")
-const btnFireplace = document.querySelector(".fireplace")
-const minutesDisplay = document.querySelector(".minutes")
-const secondsDisplay = document.querySelector(".seconds")
-let countDownOn = false
-let resetTimer = false
+
+import {
+    btnPlay,
+    btnStop,
+    btnPlus,
+    btnLess,
+    btnForest,
+    btnRain,
+    btnCoffeeShop,
+    btnFireplace,
+    minutesDisplay,
+    secondsDisplay,
+    countDownOn,
+} from "./elements.js"
+
 
 const controls = Controls({
     countDown,
     countDownOn,
-    resetTimer,
     minutesDisplay,
     secondsDisplay
 })
@@ -42,9 +45,13 @@ function countDown(){
         
         let minutes = Number(minutesDisplay.textContent)
         let seconds = Number(secondsDisplay.textContent)
+        let isFinished = (minutes <= 0 && seconds == 0)
         
-        if(minutes <= 0 || resetTimer == true){
+
+        if(resetTimer == true){
+            
             return
+
         }
         
         if(seconds <= 0){
@@ -53,7 +60,6 @@ function countDown(){
         }
         
         secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
-        
         
         countDown()
         
@@ -89,17 +95,21 @@ btnLess.addEventListener('click', function(){
 
 
 btnForest.addEventListener('click', function(){
-    soundButtonsOnOff(btnForest)
+    controls.soundButtonsOnOff(btnForest)
 })
 
 btnRain.addEventListener('click', function(){
-    soundButtonsOnOff(btnRain)
+    controls.soundButtonsOnOff(btnRain)
 })
 
 btnCoffeeShop.addEventListener('click', function(){
-    soundButtonsOnOff(btnCoffeeShop)
+    controls.soundButtonsOnOff(btnCoffeeShop)
 })
 
 btnFireplace.addEventListener('click', function(){
-    soundButtonsOnOff(btnFireplace)
+    controls.soundButtonsOnOff(btnFireplace)
 })
+
+export{
+    resetTimer
+}
