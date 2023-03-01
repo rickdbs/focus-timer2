@@ -1,11 +1,11 @@
+import { minutesDisplay, secondsDisplay } from "./elements.js"
+import Timer from "./timer.js"
+
 let resetTimer = false
 
-
+const timer = Timer({})
 export default function Controls({
-    countDown,
-    countDownOn,
-    minutesDisplay,
-    secondsDisplay,
+    countDownOn
 }){
 
 
@@ -13,7 +13,7 @@ export default function Controls({
         if(countDownOn == false){
 
             resetTimer = false
-            countDown()
+            timer.countDown()
             countDownOn = true
         }
 
