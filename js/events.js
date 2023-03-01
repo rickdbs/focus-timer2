@@ -15,7 +15,9 @@ import {
 
 
 export default function Events({
-    controls
+    controls,
+    timer,
+    sounds,
 }){
 
     btnPlay.addEventListener('click', function(){
@@ -43,18 +45,24 @@ export default function Events({
     
     btnForest.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnForest)
+        sounds.audioForestOn()
+
+        
     })
     
     btnRain.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnRain)
+        sounds.audioRainOn()
     })
     
     btnCoffeeShop.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnCoffeeShop)
+        sounds.audioCoffeShopOn()
     })
     
     btnFireplace.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnFireplace)
+        sounds.audioFireplaceOn()
     })
     
 }
