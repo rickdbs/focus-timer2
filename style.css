@@ -73,8 +73,8 @@ main{
     border: none;
     background-color: var(--btn-clr);
     border-radius: 24px;
-    width: 13.8rem;
-    height: 15.2rem;
+    width: clamp(13.8rem, 13.8rem + 30vw, 2.5rem);
+    height: clamp(15.2rem, 15.2rem + 10vh, 16rem);
 }
 
 .sounds button:hover{
@@ -84,7 +84,12 @@ main{
 .sounds button.selected {
     background-color: var(--btn-prss-clr);
 }
-
+@media(max-width: 885px){
+    main{
+        flex-direction: column;
+        gap: 2.2rem;
+    }
+}
 
 
 
