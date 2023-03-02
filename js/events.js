@@ -1,5 +1,4 @@
 import Timer from "./timer.js"
-
 const timer = Timer({})
 
 import {
@@ -18,7 +17,12 @@ export default function Events({
     controls,
     timer,
     sounds,
+    soundForest,
+    soundRain,
+    soundFireplace,
+    soundCoffeeShop,
 }){
+
 
     btnPlay.addEventListener('click', function(){
 
@@ -44,25 +48,26 @@ export default function Events({
     })
     
     btnForest.addEventListener('click', function(){
+        
         controls.soundButtonsOnOff(btnForest)
-        sounds.audioForestOn()
-
+        sounds.audioOn(soundForest)
+        
         
     })
     
     btnRain.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnRain)
-        sounds.audioRainOn()
+        sounds.audioOn(soundRain)
     })
     
     btnCoffeeShop.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnCoffeeShop)
-        sounds.audioCoffeShopOn()
+        sounds.audioOn(soundCoffeeShop)
     })
     
     btnFireplace.addEventListener('click', function(){
         controls.soundButtonsOnOff(btnFireplace)
-        sounds.audioFireplaceOn()
+        sounds.audioOn(soundFireplace)
     })
     
 }

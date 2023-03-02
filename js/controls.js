@@ -5,7 +5,7 @@ let resetTimer = false
 
 const timer = Timer({})
 export default function Controls({
-    countDownOn
+    countDownOn,
 }){
 
 

@@ -9,12 +9,19 @@ import {
     countDownOn,
     btnFireplace
 } from "./elements.js"
+import { 
+    isOn, 
+    soundForest,
+    soundRain,
+    soundFireplace,
+    soundCoffeeShop, 
+} from "./sounds.js"
 
 
 const controls = Controls({
     countDownOn,
     minutesDisplay,
-    secondsDisplay
+    secondsDisplay,
 })
 
 const timer = Timer({
@@ -24,5 +31,15 @@ const timer = Timer({
 const sounds = Sounds({btnFireplace})
 
 
-Events({controls, timer, sounds})
+Events({
+    controls,
+    timer,
+    sounds,
+    isOn,
+    soundForest,
+    soundRain,
+    soundFireplace,
+    soundCoffeeShop, 
+    isOn
+})
 
